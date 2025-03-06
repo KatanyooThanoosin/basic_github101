@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <button id = "my+">+</button>
+        <button id = "my-">-</button>
+    </div>
+    <script>
+        const num = document.createElement("div");
+        num.innerHTML = 0
+        const box = document.getElementById("box");
+        box.appendChild(num);
+        const plus = document.getElementById("my+");
+        const minus = document.getElementById("my-");
+
+        plus.addEventListener("click",() => {
+            const n = parseInt(num.innerText) + 1
+            num.innerText = n
+            if(n > 9){
+                num.style.background = 'green';
+            }
+            else if(n >= 0){
+                num.style.background = 'white';
+            }
+        })
+        minus.addEventListener("click",() => {
+            num.innerHTML -= 1
+            if(num.innerHTML < 0){
+                num.style.background = 'red';
+            }
+            else if(num.innerHTML < 10){
+                num.style.background = 'white';
+            }
+        })
+    </script>
+</body>
+</html>
